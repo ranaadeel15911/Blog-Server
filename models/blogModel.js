@@ -17,9 +17,9 @@ const blogSchema = new mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     refer:"usings"
 },
-cloudinary_id:{
-    type:String,
-},
+// cloudinary_id:{
+//     type:String,
+// },
 
 })
 
