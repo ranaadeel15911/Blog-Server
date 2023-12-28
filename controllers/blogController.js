@@ -17,13 +17,16 @@ static addNewBlog = async(req,resp)=>{
     // console.log(req.file)
     // const {path} = req.file
     // const result = await cloudinary.uploader.upload(path) 
+    const {title,category,description} = req.body
     try {
-        const {title,category,description} = req.body
         // if (title && category && description) {
             const addBlog = new blogModel({
-                title:title,
-                description:description,
-                category:category,
+                // title:title,
+                title,
+                // description:description,
+                description,
+                // category:category,
+                category,
                 // thumbnail:result.secure_url,
                 // cloudinary_id:result.public_id,
                 user:req.user._id
