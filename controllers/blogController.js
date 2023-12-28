@@ -27,6 +27,7 @@ static addNewBlog = async(req,resp)=>{
                 // description,
                 category:category,
                 // category,
+                // thumbnail:req.file.filename,
                 thumbnail:result.secure_url,
                 cloudinary_id:result.public_id,
                 user:req.user._id

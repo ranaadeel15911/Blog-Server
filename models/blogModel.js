@@ -9,17 +9,17 @@ const blogSchema = new mongoose.Schema({
     },
     description:{
     type:String,
-}/* ,
+},
     thumbnail:{
     type:String,
-} */,
+},
     user:{
     type:mongoose.Schema.Types.ObjectId,
     refer:"usings"
-},/* ,
+},
 cloudinary_id:{
     type:String,
-}, */
+},
 
 })
 
