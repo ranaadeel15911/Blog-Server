@@ -23,10 +23,22 @@ router.post('/user/register',AuthController.userRegister)
 router.post('/user/login',AuthController.userLogin)
 //protected route
 router.get('/get/allblogs',checkIsUserAuthenticated,BlogController.getAllBlogs)
-router.post('/add/blog', upload.single("thumbnail") ,checkIsUserAuthenticated,BlogController.addNewBlog)
+router.post('/add', upload.single("thumbnail") ,checkIsUserAuthenticated,BlogController.addNewBlog)
 router.get('/get/blog/:id',checkIsUserAuthenticated,BlogController.getSingleBlog)
 router.delete('/delete/blog/:id',BlogController.deleteSingleBlog)
 
 router.get('/get/categories',checkIsUserAuthenticated,CategoryControllers.getAllCategories)
 router.post('/add/category',checkIsUserAuthenticated,CategoryControllers.addNewCategory)
 export default router
+
+
+
+
+
+
+
+
+
+
+
+
