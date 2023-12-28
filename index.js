@@ -15,7 +15,7 @@ app.use(cors({
 }))
 app.use(express.json());
 // app.use(express.static("public/upload"))
-app.use(express.static(path.join(__dirname, 'publicc')))
+app.use(express.static(path.join(__dirname + 'publicc')))
 app.get("/",(req,resp)=>{
 resp.send("API is running ...")
 })
