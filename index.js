@@ -8,7 +8,7 @@ const PORT = 'https://blog-server-eosin.vercel.app'
 connectToDb()
 // app.use(cors())
 app.use(cors({
-    origin:["https://blog-frontend-psi-six.vercel.app"],
+    origin:["https://blog-frontend-psi-six.vercel.app","http://localhost:3000"],
     methods:["POST","GET","DELETE"],
     credentials:true
 }))
