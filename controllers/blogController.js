@@ -19,7 +19,7 @@ static addNewBlog = async(req,resp)=>{
     // const {path} = req.file
     // const result = await cloudinary.uploader.upload(path) 
     try {
-        if (title && category && description) {
+        // if (title && category && description) {
             const addBlog = new blogModel({
                 title:title,
                 description:description,
@@ -36,10 +36,10 @@ static addNewBlog = async(req,resp)=>{
             else{
                 resp.status(400).json({message:'something wrong'})
             }
-        }
-        else{
-            resp.status(400).json({message:'All fields required'})   
-        }
+        // }
+        // else{
+            // resp.status(400).json({message:'All fields required'})   
+        // }
     } catch (error) {
         resp.status(400).json({message:'Somethign went wrong'})   
     }
