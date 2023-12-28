@@ -13,10 +13,10 @@ static getAllBlogs = async(req,resp)=>{
     }
 }
 static addNewBlog = async(req,resp)=>{
-    resp.send({message:'hello'})
-    console.log(req.file)
-    const {path} = req.file
-    const result = await cloudinary.uploader.upload(path) 
+    // resp.send({message:'hello'})
+    // console.log(req.file)
+    // const {path} = req.file
+    // const result = await cloudinary.uploader.upload(path) 
     const {title,category,description} = req.body
     try {
         if (title && category && description) {
@@ -27,13 +27,13 @@ static addNewBlog = async(req,resp)=>{
                 // description,
                 category:category,
                 // category,
-                // thumbnail:req.file.filename,
-                thumbnail:result.secure_url,
-                cloudinary_id:result.public_id,
+                thumbnail:req.file.filename,
+                // thumbnail:result.secure_url,
+                // cloudinary_id:result.public_id,
                 user:req.user._id
             })
             const savedBlog = await addBlog.save()
-            fs.unlinkSync(path)
+            // fs.unlinkSync(path)
             if (savedBlog) {
                 resp.status(200).json({message:'Blog added successfully'})
             }
