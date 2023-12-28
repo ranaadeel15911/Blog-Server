@@ -29,7 +29,7 @@ static addNewBlog = async(req,resp)=>{
                 user:req.user._id
             })
             const savedBlog = await addBlog.save()
-            fs.unlinkSync(path)
+            // fs.unlinkSync(path)
             if (savedBlog) {
                 resp.status(200).json({message:'Blog added successfully'})
             }

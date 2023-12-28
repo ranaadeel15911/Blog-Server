@@ -2,6 +2,7 @@ import express from 'express'
 import connectToDb from './config/db.js'
 import cors from 'cors'
 import authRoutes from './routes/blog.js'
+import path from "path"
 const app = express()
 const PORT = 'https://blog-server-eosin.vercel.app'
 // const PORT = 900
@@ -13,7 +14,7 @@ app.use(cors({
     credentials:true
 }))
 app.use(express.json());
-app.use("/",express.static("public/upload"))
+app.use("/",express.static(__dirname))
 app.get("/",(req,resp)=>{
 resp.send("API is running ...")
 })
