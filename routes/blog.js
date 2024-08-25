@@ -8,7 +8,7 @@ const router = express.Router()
                         /* Multer Config */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../publicc')
+      cb(null, `public/upload/`)
     },
     filename: function (req, file, cb) {
       // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
