@@ -25,20 +25,3 @@ app.listen(PORT,()=>{
 })
 
 
-import express from 'express'
-import AuthController from '../controllers/authController.js'
-import BlogController from '../controllers/blogController.js'
-import CategoryControllers from '../controllers/categoryController.js'
-import multer from 'multer'
-import checkIsUserAuthenticated from '../middlewares/authMiddleware.js'
-const router = express.Router()
-                        /* Multer Config */
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.resolve('public/upload/'));
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, `${uniqueSuffix}-${file.originalname}`);
-    }
-});
