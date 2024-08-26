@@ -16,7 +16,8 @@ const storage = multer.diskStorage({
     }
   })
   
-  const upload = multer({ storage: storage })
+ const upload = multer({ storage: storage });
+
                     /* Multer Config  */
 
 router.post('/user/register',AuthController.userRegister)
@@ -30,3 +31,4 @@ router.delete('/delete/blog/:id',BlogController.deleteSingleBlog)
 router.get('/get/categories',checkIsUserAuthenticated,CategoryControllers.getAllCategories)
 router.post('/add/category',checkIsUserAuthenticated,CategoryControllers.addNewCategory)
 export default router
+
