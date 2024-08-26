@@ -14,8 +14,8 @@ app.use(cors({
     credentials:true
 }))
 app.use(express.json());
-// app.use(express.static("public/upload"))
-app.use(express.static('publicc'))
+app.use(express.static("public/upload"))
+// app.use(express.static('publicc'))
 app.get("/",(req,resp)=>{
 resp.send("API is running ...")
 })
